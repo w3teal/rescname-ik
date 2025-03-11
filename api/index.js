@@ -1,10 +1,10 @@
 export default function handler(req, res) {
-    const cloudinaryEnv = process.env.CLOUDINARY_ENV || "w3teal";
-    const cloudinaryHost = `https://res.cloudinary.com/${cloudinaryEnv}`;
+    const imagekitEnv = process.env.IMAGEKIT_ENV || "w3teal";
+    const imagekitHost = `https://ik.imagekit.io/${imagekitEnv}`;
 
-    const cloudinaryPath = req.url.replace("/api", "");
+    const imagekitPath = req.url.replace("/api", "");
 
-    const cloudinaryUrl = `${cloudinaryHost}${cloudinaryPath}`;
-    res.writeHead(307, { Location: cloudinaryUrl });
+    const imagekitUrl = `${imagekitHost}${imagekitPath}`;
+    res.writeHead(307, { Location: imagekitUrl });
     res.end();
 }
